@@ -206,7 +206,7 @@ export default function ResultsPage() {
     medium: 'bg-yellow-100 text-yellow-800 border-yellow-300',
     high: 'bg-red-100 text-red-800 border-red-300'
   }
-  const riskColorClass = riskColor[displayResult.riskScore]
+  const riskColorClass = riskColor[displayResult.riskScore as 'low' | 'medium' | 'high'] || riskColor.medium
 
   return (
     <div className="min-h-screen bg-gray-50">
