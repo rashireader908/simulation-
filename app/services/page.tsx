@@ -7,9 +7,9 @@ export default function ServicesPage() {
     {
       title: 'Cash Flow Simulation',
       icon: '',
-      description: 'Simulate your cash flow over 1-6 months to see how your financial decisions impact your balance.',
+      description: 'Simulate your cash flow over 1 to 6 months to see how your financial decisions impact your balance.',
       features: [
-        'Day-by-day cash flow tracking',
+        'Day by day cash flow tracking',
         'Visual balance trends',
         'Identify tight months',
         'Minimum balance alerts',
@@ -18,10 +18,10 @@ export default function ServicesPage() {
     {
       title: 'Scenario Comparison',
       icon: '',
-      description: 'Create multiple "what-if" scenarios and compare them side-by-side to make informed decisions.',
+      description: 'Create multiple "what if" scenarios and compare them side by side to make informed decisions.',
       features: [
         'Unlimited scenarios',
-        'Side-by-side comparison',
+        'Side by side comparison',
         'Visual scenario differences',
         'Save and revisit scenarios',
       ],
@@ -31,8 +31,8 @@ export default function ServicesPage() {
       icon: '',
       description: 'Track your fixed monthly bills with due dates and see how they affect your cash flow.',
       features: [
-        'Add/edit/remove bills',
-        'Set due dates (1-28)',
+        'Add, edit, or remove bills',
+        'Set due dates (1 to 28)',
         'Track monthly expenses',
         'Visual spending breakdown',
       ],
@@ -66,7 +66,7 @@ export default function ServicesPage() {
       features: [
         '100% local storage',
         'No account required',
-        'Export/import data',
+        'Export and import data',
         'Complete control',
       ],
     },
@@ -104,7 +104,7 @@ export default function ServicesPage() {
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
             <p className="text-blue-100 mb-6 text-lg">
-              All our services are available for free. No sign-up required, no hidden fees.
+              All our services are available for free. No sign up required, no hidden fees.
             </p>
             <Link href="/">
               <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3">
@@ -165,7 +165,7 @@ export default function ServicesPage() {
                   3
                 </span>
                 <div>
-                  <strong>Compare Scenarios:</strong> Test different "what-if" situations
+                  <strong>Compare Scenarios:</strong> Test different "what if" situations
                 </div>
               </li>
               <li className="flex items-start gap-3">

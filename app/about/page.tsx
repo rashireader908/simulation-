@@ -72,7 +72,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-semibold text-lg text-gray-900 mb-1">No Account Required</h3>
                 <p className="text-gray-700">
-                  Start using simnace immediately. No sign-ups, no emails, no passwords to remember.
+                  Start using simnace immediately. No sign ups, no emails, no passwords to remember.
                 </p>
               </div>
             </div>
@@ -83,7 +83,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-semibold text-lg text-gray-900 mb-1">Scenario Comparison</h3>
                 <p className="text-gray-700">
-                  Create multiple "what-if" scenarios and compare them side-by-side to make informed decisions.
+                  Create multiple "what if" scenarios and compare them side by side to make informed decisions.
                 </p>
               </div>
             </div>

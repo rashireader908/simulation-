@@ -47,7 +47,7 @@ export default function FAQPage() {
     {
       category: 'Features',
       question: 'How many scenarios can I create?',
-      answer: 'You can create unlimited scenarios! Start with a baseline scenario, then duplicate it to create "what-if" scenarios. Compare different scenarios side-by-side to see how different decisions affect your cash flow.',
+      answer: 'You can create unlimited scenarios! Start with a baseline scenario, then duplicate it to create "what if" scenarios. Compare different scenarios side by side to see how different decisions affect your cash flow.',
     },
     {
       category: 'Features',
@@ -62,7 +62,7 @@ export default function FAQPage() {
     {
       category: 'Features',
       question: 'How accurate are the simulations?',
-      answer: 'The simulations use a deterministic day-by-day cash flow model. They provide approximations based on your inputs. Remember, simnace is a planning tool, not financial advice. Real-world results may vary based on many factors.',
+      answer: 'The simulations use a deterministic day by day cash flow model. They provide approximations based on your inputs. Remember, simnace is a planning tool, not financial advice. Real world results may vary based on many factors.',
     },
     {
       category: 'Troubleshooting',

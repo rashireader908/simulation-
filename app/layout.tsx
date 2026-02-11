@@ -18,6 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <div className="bg-yellow-400 text-yellow-900 text-center py-2 px-4 font-bold text-sm">
+          WIP
+        </div>
         <Navigation />
         <main>{children}</main>
         <Footer />

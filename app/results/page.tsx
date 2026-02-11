@@ -88,7 +88,7 @@ export default function ResultsPage() {
     const currentScenario = scenarios.find((s) => s.id === currentScenarioId)
     if (!currentScenario) return
 
-    const name = prompt('Enter a name for this scenario:', `${currentScenario.name} (What-If)`)
+    const name = prompt('Enter a name for this scenario:', `${currentScenario.name} (What If)`)
     if (!name) return
 
     // Create new scenario with what-if inputs
@@ -226,14 +226,14 @@ export default function ResultsPage() {
           <ScenarioSelector />
         </div>
 
-        {/* What-If Controls */}
+        {/* What If Controls */}
         <div className="mb-6">
           <button
             onClick={() => setShowWhatIf(!showWhatIf)}
             className="w-full text-left p-4 bg-white border-2 border-gray-300 rounded-lg hover:border-blue-500 transition-colors"
           >
             <div className="flex justify-between items-center">
-              <h2 className="text-lg font-semibold">What-If Analysis</h2>
+              <h2 className="text-lg font-semibold">What If Analysis</h2>
               <span className="text-sm text-gray-500">{showWhatIf ? '▼' : '▶'}</span>
             </div>
           </button>

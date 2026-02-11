@@ -68,7 +68,7 @@ export function WhatIfControls({ originalInputs, onInputsChange, onReset }: What
     subscriptionAdjustments.size > 0
 
   return (
-    <Card title="What-If Analysis" className="mb-6">
+    <Card title="What If Analysis" className="mb-6">
       <div className="space-y-6">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
