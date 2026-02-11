@@ -27,13 +27,13 @@ export function TransactionTimeline({ cashFlowEvents, months }: TransactionTimel
   const getEventIcon = (type: CashFlowEvent['type']) => {
     switch (type) {
       case 'income':
-        return '💰'
+        return '$'
       case 'large_bill':
-        return '📄'
+        return 'B'
       case 'large_subscription':
-        return '📱'
+        return 'S'
       case 'negative_balance':
-        return '⚠️'
+        return '!'
       default:
         return '•'
     }

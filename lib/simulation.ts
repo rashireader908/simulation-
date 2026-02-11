@@ -252,11 +252,11 @@ export function simulateCashflow(inputs: FinancialInputs): SimulationResult {
   
   // Risk assessment
   if (riskScore === 'high') {
-    insights.push(`⚠️ High risk: You have ${negativeDays} negative days and ${tightMonths.size} tight months. Consider increasing your starting buffer or reducing expenses.`)
+    insights.push(`High risk: You have ${negativeDays} negative days and ${tightMonths.size} tight months. Consider increasing your starting buffer or reducing expenses.`)
   } else if (riskScore === 'medium') {
-    insights.push(`⚠️ Medium risk: You have some tight periods. Monitor your cash flow closely.`)
+    insights.push(`Medium risk: You have some tight periods. Monitor your cash flow closely.`)
   } else {
-    insights.push(`✅ Low risk: Your cash flow stays positive throughout the simulation period.`)
+    insights.push(`Low risk: Your cash flow stays positive throughout the simulation period.`)
   }
 
   // Specific problem identification
@@ -337,7 +337,7 @@ export function simulateCashflow(inputs: FinancialInputs): SimulationResult {
     }
   }
   if (maxConsecutiveNegative > 5) {
-    insights.push(`⚠️ Warning: You have ${maxConsecutiveNegative} consecutive days with negative balance.`)
+    insights.push(`Warning: You have ${maxConsecutiveNegative} consecutive days with negative balance.`)
   }
 
   // Highest risk month

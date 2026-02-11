@@ -40,10 +40,10 @@ git push -u origin main
 
 ## Current Status
 
-✅ Git repository initialized
-✅ All files committed (39 files, 13,755+ lines)
-✅ Remote configured: https://github.com/rashireader908/simulation-.git
-⏳ **Waiting for authentication to push**
+- Git repository initialized
+- All files committed (39 files, 13,755+ lines)
+- Remote configured: https://github.com/rashireader908/simulation-.git
+- **Waiting for authentication to push**
 
 ## What's Been Committed
 

@@ -201,11 +201,12 @@ export default function ResultsPage() {
   const deltaNegativeDays = displayResult.negativeDays - baselineResult.negativeDays
   const deltaEndBalance = displayResult.endBalance - baselineResult.endBalance
 
-  const riskColor = {
+  const riskColor: Record<'low' | 'medium' | 'high', string> = {
     low: 'bg-green-100 text-green-800 border-green-300',
     medium: 'bg-yellow-100 text-yellow-800 border-yellow-300',
     high: 'bg-red-100 text-red-800 border-red-300'
-  }[displayResult.riskScore]
+  }
+  const riskColorClass = riskColor[displayResult.riskScore]
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -251,7 +252,7 @@ export default function ResultsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <Card>
             <p className="text-sm text-gray-600 mb-1">Risk Score</p>
-            <p className={`text-2xl font-bold px-3 py-2 rounded border-2 inline-block ${riskColor}`}>
+            <p className={`text-2xl font-bold px-3 py-2 rounded border-2 inline-block ${riskColorClass}`}>
               {displayResult.riskScore.toUpperCase()}
             </p>
           </Card>

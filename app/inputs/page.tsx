@@ -7,6 +7,7 @@ import { Button } from '../../components/ui/Button'
 import { Input } from '../../components/ui/Input'
 import { Card } from '../../components/ui/Card'
 import { PrivacyNotice } from '../../components/PrivacyNotice'
+import { SaveTutorial } from '../../components/SaveTutorial'
 import Link from 'next/link'
 
 export default function InputsPage() {
@@ -18,10 +19,21 @@ export default function InputsPage() {
   const [monthlyFlexSpend, setMonthlyFlexSpend] = useState('')
   const [months, setMonths] = useState('1')
   const [errors, setErrors] = useState<Record<string, string>>({})
+  const [showTutorial, setShowTutorial] = useState(false)
 
   useEffect(() => {
     initialize()
   }, [])
+
+  useEffect(() => {
+    // Check if user has never saved before and tutorial hasn't been dismissed
+    const hasNeverSaved = scenarios.length === 0 && !currentScenarioId
+    const tutorialDismissed = typeof window !== 'undefined' 
+      ? localStorage.getItem('save-tutorial-dismissed') === 'true'
+      : false
+    
+    setShowTutorial(hasNeverSaved && !tutorialDismissed)
+  }, [scenarios, currentScenarioId])
   
   useEffect(() => {
     const currentScenario = scenarios.find((s) => s.id === currentScenarioId)
@@ -87,6 +99,10 @@ export default function InputsPage() {
         <h1 className="text-3xl font-bold mb-6">Financial Inputs</h1>
         
         <PrivacyNotice />
+
+        {showTutorial && (
+          <SaveTutorial onDismiss={() => setShowTutorial(false)} />
+        )}
 
         <Card>
           <div className="space-y-4">
