@@ -7,7 +7,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-blue-600 mb-4">About Money Sandbox</h1>
+          <h1 className="text-5xl font-bold text-blue-600 mb-4">About simnace</h1>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             Empowering you to make better financial decisions through simulation and visualization
           </p>
@@ -16,7 +16,7 @@ export default function AboutPage() {
         <Card className="mb-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
           <p className="text-gray-700 text-lg leading-relaxed mb-4">
-            Money Sandbox was created to give you complete control over your financial planning. 
+            simnace was created to give you complete control over your financial planning. 
             We believe that everyone deserves access to powerful financial simulation tools without 
             compromising their privacy or security.
           </p>
@@ -72,7 +72,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-semibold text-lg text-gray-900 mb-1">No Account Required</h3>
                 <p className="text-gray-700">
-                  Start using Money Sandbox immediately. No sign-ups, no emails, no passwords to remember.
+                  Start using simnace immediately. No sign-ups, no emails, no passwords to remember.
                 </p>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import { AppState } from './types'
 
-const STORAGE_KEY = 'money-sandbox-state'
+const STORAGE_KEY = 'simnace-state'
 const STORAGE_VERSION = '1.0.0'
 
 export function loadState(): AppState | null {

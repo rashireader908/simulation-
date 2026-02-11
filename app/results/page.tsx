@@ -125,7 +125,7 @@ export default function ResultsPage() {
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = 'money-sandbox-export.json'
+    a.download = 'simnace-export.json'
     a.click()
     URL.revokeObjectURL(url)
   }
@@ -158,14 +158,14 @@ export default function ResultsPage() {
     if (!displayResult || !displayInputs) return
     const csv = exportToCSV(displayResult, displayInputs)
     const scenarioName = scenarios.find((s) => s.id === currentScenarioId)?.name || 'scenario'
-    downloadCSV(csv, `money-sandbox-${scenarioName}-${Date.now()}.csv`)
+    downloadCSV(csv, `simnace-${scenarioName}-${Date.now()}.csv`)
   }
 
   const handleExportText = () => {
     if (!displayResult || !displayInputs) return
     const scenarioName = scenarios.find((s) => s.id === currentScenarioId)?.name
     const text = exportToTextSummary(displayResult, displayInputs, scenarioName)
-    downloadText(text, `money-sandbox-report-${Date.now()}.txt`)
+    downloadText(text, `simnace-report-${Date.now()}.txt`)
   }
 
   const handleExportPDF = () => {

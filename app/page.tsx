@@ -43,7 +43,7 @@ export default function Dashboard() {
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = 'money-sandbox-export.json'
+    a.download = 'simnace-export.json'
     a.click()
     URL.revokeObjectURL(url)
   }
@@ -79,7 +79,7 @@ export default function Dashboard() {
         <div className="mb-8 animate-fade-in">
           <div className="mb-3">
             <h1 className="text-5xl font-bold text-blue-600 mb-2">
-              Money Sandbox
+              simnace
             </h1>
             <p className="text-gray-700 text-lg font-medium">Plan and simulate your financial scenarios</p>
           </div>

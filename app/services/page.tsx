@@ -108,7 +108,7 @@ export default function ServicesPage() {
             </p>
             <Link href="/">
               <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3">
-                Start Using Money Sandbox
+                Start Using simnace
               </Button>
             </Link>
           </div>

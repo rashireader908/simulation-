@@ -6,7 +6,7 @@ import { Navigation, Footer } from '../components/Navigation'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Money Sandbox - Financial Decision Simulator',
+  title: 'simnace - Financial Decision Simulator',
   description: 'A local-only financial decision simulator',
 }
 

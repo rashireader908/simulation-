@@ -1,4 +1,4 @@
-# Money Sandbox
+# simnace
 
 A local-only financial decision simulator that runs entirely on your device. No login, no bank connections, no backend—just you and your financial scenarios.
 

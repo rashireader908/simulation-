@@ -16,18 +16,18 @@ export default function FAQPage() {
   const faqs: FAQItem[] = [
     {
       category: 'Getting Started',
-      question: 'How do I get started with Money Sandbox?',
+      question: 'How do I get started with simnace?',
       answer: 'Getting started is easy! Simply navigate to the Inputs page and enter your financial information: monthly income, starting cash buffer, monthly flexible spending, and simulation period. Then click Save to create your baseline scenario. You can then add bills and subscriptions, and run your first simulation.',
     },
     {
       category: 'Getting Started',
       question: 'Do I need to create an account?',
-      answer: 'No! Money Sandbox is completely free and requires no account creation. All your data is stored locally on your device using your browser\'s localStorage. Just start using the app immediately.',
+      answer: 'No! simnace is completely free and requires no account creation. All your data is stored locally on your device using your browser\'s localStorage. Just start using the app immediately.',
     },
     {
       category: 'Getting Started',
-      question: 'Is Money Sandbox really free?',
-      answer: 'Yes, Money Sandbox is completely free with no hidden fees, subscriptions, or premium features. All functionality is available to all users at no cost.',
+      question: 'Is simnace really free?',
+      answer: 'Yes, simnace is completely free with no hidden fees, subscriptions, or premium features. All functionality is available to all users at no cost.',
     },
     {
       category: 'Data & Privacy',
@@ -42,7 +42,7 @@ export default function FAQPage() {
     {
       category: 'Data & Privacy',
       question: 'What happens if I clear my browser data?',
-      answer: 'If you clear your browser\'s localStorage, your Money Sandbox data will be deleted. We recommend regularly exporting your data as a backup. You can do this from the Results page or the Dashboard.',
+      answer: 'If you clear your browser\'s localStorage, your simnace data will be deleted. We recommend regularly exporting your data as a backup. You can do this from the Results page or the Dashboard.',
     },
     {
       category: 'Features',
@@ -62,7 +62,7 @@ export default function FAQPage() {
     {
       category: 'Features',
       question: 'How accurate are the simulations?',
-      answer: 'The simulations use a deterministic day-by-day cash flow model. They provide approximations based on your inputs. Remember, Money Sandbox is a planning tool, not financial advice. Real-world results may vary based on many factors.',
+      answer: 'The simulations use a deterministic day-by-day cash flow model. They provide approximations based on your inputs. Remember, simnace is a planning tool, not financial advice. Real-world results may vary based on many factors.',
     },
     {
       category: 'Troubleshooting',
@@ -76,13 +76,13 @@ export default function FAQPage() {
     },
     {
       category: 'General',
-      question: 'Is Money Sandbox financial advice?',
-      answer: 'No. Money Sandbox is a financial simulation and planning tool, not financial advice. The results are simulations based on your inputs and should be used for planning purposes only. For professional financial advice, please consult a qualified financial advisor.',
+      question: 'Is simnace financial advice?',
+      answer: 'No. simnace is a financial simulation and planning tool, not financial advice. The results are simulations based on your inputs and should be used for planning purposes only. For professional financial advice, please consult a qualified financial advisor.',
     },
     {
       category: 'General',
-      question: 'Can I use Money Sandbox on mobile devices?',
-      answer: 'Yes! Money Sandbox works in any modern web browser on desktop, tablet, or mobile devices. However, for the best experience, we recommend using a desktop or tablet with a larger screen.',
+      question: 'Can I use simnace on mobile devices?',
+      answer: 'Yes! simnace works in any modern web browser on desktop, tablet, or mobile devices. However, for the best experience, we recommend using a desktop or tablet with a larger screen.',
     },
     {
       category: 'General',
@@ -103,7 +103,7 @@ export default function FAQPage() {
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-blue-600 mb-4">Frequently Asked Questions</h1>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Find answers to common questions about Money Sandbox
+            Find answers to common questions about simnace
           </p>
         </div>
 

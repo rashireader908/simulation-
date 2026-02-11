@@ -4,7 +4,7 @@ export function exportToCSV(result: SimulationResult, inputs: FinancialInputs): 
   const lines: string[] = []
   
   // Header
-  lines.push('Money Sandbox Simulation Export')
+  lines.push('simnace Simulation Export')
   lines.push(`Generated: ${new Date().toISOString()}`)
   lines.push('')
   
@@ -65,7 +65,7 @@ export function exportToTextSummary(result: SimulationResult, inputs: FinancialI
   const lines: string[] = []
   
   lines.push('='.repeat(60))
-  lines.push('MONEY SANDBOX SIMULATION REPORT')
+  lines.push('SIMNACE SIMULATION REPORT')
   if (scenarioName) {
     lines.push(`Scenario: ${scenarioName}`)
   }
@@ -146,7 +146,7 @@ export function exportToTextSummary(result: SimulationResult, inputs: FinancialI
   return lines.join('\n')
 }
 
-export function downloadCSV(csvContent: string, filename: string = 'money-sandbox-export.csv'): void {
+export function downloadCSV(csvContent: string, filename: string = 'simnace-export.csv'): void {
   const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' })
   const url = URL.createObjectURL(blob)
   const link = document.createElement('a')
@@ -156,7 +156,7 @@ export function downloadCSV(csvContent: string, filename: string = 'money-sandbo
   URL.revokeObjectURL(url)
 }
 
-export function downloadText(textContent: string, filename: string = 'money-sandbox-report.txt'): void {
+export function downloadText(textContent: string, filename: string = 'simnace-report.txt'): void {
   const blob = new Blob([textContent], { type: 'text/plain;charset=utf-8;' })
   const url = URL.createObjectURL(blob)
   const link = document.createElement('a')
@@ -181,7 +181,7 @@ export function exportToPDF(result: SimulationResult, inputs: FinancialInputs, s
     <!DOCTYPE html>
     <html>
       <head>
-        <title>Money Sandbox Report</title>
+        <title>simnace Report</title>
         <style>
           body {
             font-family: 'Courier New', monospace;

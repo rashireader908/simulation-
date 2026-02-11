@@ -1,172 +1,131 @@
 'use client'
 
 import { useState } from 'react'
-import { Card } from '../../components/ui/Card'
-import { Button } from '../../components/ui/Button'
-import { Input } from '../../components/ui/Input'
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [copied, setCopied] = useState(false)
+  const [iconHover, setIconHover] = useState(false)
+  const email = 'help.savecatcher@gmail.com'
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus('idle')
-
-    // Simulate form submission (in a real app, this would send to a backend)
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setSubmitStatus('success')
-      setFormData({ name: '', email: '', subject: '', message: '' })
-      
-      // Reset status after 5 seconds
-      setTimeout(() => setSubmitStatus('idle'), 5000)
-    }, 1000)
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(email)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy:', err)
+    }
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-blue-600 mb-4">Contact Us</h1>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Have questions, feedback, or suggestions? We'd love to hear from you!
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          <Card>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Get in Touch</h2>
-            <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <div className="text-2xl">📧</div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                  <p className="text-gray-700">support@moneysandbox.com</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="text-2xl">💬</div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Response Time</h3>
-                  <p className="text-gray-700">We typically respond within 24-48 hours</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="text-2xl">🌍</div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
-                  <p className="text-gray-700">Available worldwide, 24/7</p>
-                </div>
-              </div>
-            </div>
-          </Card>
-
-          <Card>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Contact Us?</h2>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Report bugs or technical issues</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Suggest new features or improvements</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Ask questions about using the app</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Share your success stories</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Provide general feedback</span>
-              </li>
-            </ul>
-          </Card>
-        </div>
-
-        <Card>
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
-          
-          {submitStatus === 'success' && (
-            <div className="mb-6 p-4 bg-green-50 border-2 border-green-200 rounded-lg">
-              <p className="text-green-800 font-medium">
-                ✓ Thank you for your message! We'll get back to you soon.
-              </p>
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <Input
-              label="Your Name"
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-
-            <Input
-              label="Your Email"
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-
-            <Input
-              label="Subject"
-              type="text"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-            />
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={6}
-                value={formData.message}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full md:w-auto px-8"
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex items-center justify-center px-4 py-12">
+      <div className="text-center w-full max-w-md">
+        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mx-auto border border-gray-100 transform transition-all duration-300 hover:shadow-2xl hover:scale-105">
+          <div className="mb-6">
+            <div 
+              className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4 transition-all duration-300 cursor-pointer hover:bg-blue-200 hover:scale-110"
+              onMouseEnter={() => setIconHover(true)}
+              onMouseLeave={() => setIconHover(false)}
             >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-            </Button>
-          </form>
-        </Card>
+              <svg 
+                className={`w-8 h-8 text-blue-600 transition-transform duration-300 ${iconHover ? 'rotate-12 scale-110' : ''}`} 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+          </div>
+          <h1 
+            className="text-3xl font-bold text-gray-900 mb-2"
+            style={{
+              animation: 'fadeIn 0.5s ease-out',
+            }}
+          >
+            Contact Us
+          </h1>
+          <p className="text-gray-600 mb-8">Get in touch with us</p>
+          
+          <div className="space-y-4">
+            <div className="flex items-center justify-center gap-3 p-4 bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-300">
+              <a
+                href={`mailto:${email}`}
+                className="inline-flex items-center gap-3 text-xl md:text-2xl font-semibold text-blue-600 hover:text-blue-700 transition-all duration-200 group"
+              >
+                <svg 
+                  className="w-6 h-6 transition-transform duration-200 group-hover:scale-110" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span className="group-hover:underline">{email}</span>
+              </a>
+            </div>
+
+            <div className="flex gap-3 justify-center">
+              <button
+                onClick={copyToClipboard}
+                className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 active:scale-95 transition-all duration-200 shadow-md hover:shadow-lg"
+              >
+                {copied ? (
+                  <>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <span>Copy Email</span>
+                  </>
+                )}
+              </button>
+
+              <a
+                href={`mailto:${email}`}
+                className="flex items-center gap-2 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg border-2 border-blue-600 hover:bg-blue-50 active:scale-95 transition-all duration-200 shadow-md hover:shadow-lg"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span>Send Email</span>
+              </a>
+            </div>
+
+            {copied && (
+              <div 
+                className="mt-4 p-3 bg-green-100 text-green-700 rounded-lg border border-green-300"
+                style={{
+                  animation: 'fadeIn 0.5s ease-out',
+                }}
+              >
+                <p className="text-sm font-medium">✓ Email copied to clipboard!</p>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
+
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(-10px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `
+      }} />
     </div>
   )
 }
